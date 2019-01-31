@@ -1,15 +1,15 @@
-function takeANumber(line, name)
+function takeANumber(line, name) // this function allows new people to be added to the line. It gives them a welcome message and a number
 {
   line.push(name)
   return "Welcome, " + name + ". You are number " + line.length + " in line."
 }
-function nowServing(line)
+function nowServing(line) // this function returns the name of next person to be served and removes them from the array
 {
-  if (line.length === 0) {return "There is nobody waiting to be served!"}
+  if (line.length === 0) {return "There is nobody waiting to be served!"} // checks if the line is empty
   else
   {
-    var next = line[0]
-    line.shift()
+    var next = line[0] // takes the name of the next person to be served
+    line.shift() // removes the first person in the array
     return `Currently serving ${next}.`
   }
 }
