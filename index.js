@@ -13,9 +13,9 @@ function nowServing(line)
     return `Currently serving ${next}.`
   }
 }
-function currentLine(line)
+function currentLine(line) // this function returns a formatted string of the current line at the deli counter
 {
-  if(line.length === 0) {return "The line is currently empty."}
+  if(line.length === 0) {return "The line is currently empty."} //check to see if the line is empty
   else
   {
     var n = 1
@@ -25,8 +25,7 @@ function currentLine(line)
       if(n === line.length){return string}
       else
       {
-        var a = n + 1
-        string = `${string}, ${a}. ${line[n]}`
+        string = `${string}, ${n + 1}. ${line[n]}`
         n++
          return makeString(n, string)
       }
