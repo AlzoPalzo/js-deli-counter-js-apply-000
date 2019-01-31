@@ -19,15 +19,15 @@ function currentLine(line) // this function returns a formatted string of the cu
   else
   {
     var n = 1
-    var intitialString = `The line is currently: 1. ${line[0]}`
-    function makeString(n, string)
+    var intitialString = `The line is currently: 1. ${line[0]}` //this string contains the initial sentence aswell as the first person in the line
+    function makeString(n, string) //this nested function builds the string based on thh current position(n) in the array
     {
-      if(n === line.length){return string}
+      if(n === line.length){return string} // if the current position is the length of the array then the string is built and is returned
       else
       {
-        string = `${string}, ${n + 1}. ${line[n]}`
+        string = `${string}, ${n + 1}. ${line[n]}`//adds the next name and its postion in the line to the string
         n++
-         return makeString(n, string)
+         return makeString(n, string) //the function is recursive. It calls itself until the string is fully built
       }
     }
     var finalString = makeString(n, intitialString)
